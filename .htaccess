@@ -1,0 +1,5 @@
+RewriteEngine On
+# Prevent rewrite loops
+RewriteCond %{REQUEST_URI} !^/plumber-face-swap/build/
+# Redirect everything inside /face-swap/ to the build folder
+RewriteRule ^(.*)$ build/$1 [L]

@@ -1,0 +1,3 @@
+ALTER TABLE `SuccessRecords` ADD `doctorImage` LONGTEXT AFTER `originalImage`;
+
+ALTER TABLE `FailureRecords` ADD `doctorImage` LONGTEXT AFTER `originalImage`;

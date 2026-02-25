@@ -1,0 +1,26 @@
+# --- Dependencies (Bahut Heavy hoti hai) ---
+node_modules/
+package-lock.json
+
+# --- Environment Variables (Secret Keys - SECURITY RISK) ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# --- Logs & Debugging ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# --- OS & IDE Files (System junk) ---
+.DS_Store
+.vscode/
+.idea/
+
+# --- Backend Specific ---
+backend/uploads/
+backend/temp/

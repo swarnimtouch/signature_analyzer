@@ -1,0 +1,656 @@
+/* Import Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f9 !important; 
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+body.no-scroll {
+  overflow: hidden !important;
+}
+
+/* --- Wrapper & Layout --- */
+.signature-app-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* --- Main Card --- */
+.form-card {
+  background: #ffffff; 
+  border-radius: 16px;
+  border: 2px solid #0069d9; /* Blue Theme */
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 105, 217, 0.08); 
+  width: 100%;
+  max-width: 550px; 
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- Header --- */
+.brand-header-section {
+  text-align: center;
+  margin-bottom: 25px;
+  border-bottom: 1px dashed #e0e0e0;
+  padding-bottom: 15px;
+}
+
+.main-title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(145deg, #0069d9, #004494); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-slogan {
+  font-size: 14px;
+  color: #6c757d;
+  margin-top: 5px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* --- Input Section --- */
+.input-section {
+  margin-bottom: 15px;
+}
+
+.label-text {
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 14px;
+  text-align: left; /* ✅ Center se hatakar proper left align kiya */
+}
+
+.custom-text-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #ced4da;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+.custom-text-input:focus {
+  outline: none;
+  border-color: #0069d9;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 105, 217, 0.15);
+}
+
+.is-invalid-custom {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+
+.error-msg {
+  color: #dc2626; 
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: left;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Upload Sections --- */
+.mt-4 {
+  margin-top: 1.5rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.upload-section {
+  margin-bottom: 20px;
+}
+
+.file-wrap {
+  position: relative;
+  display: block;
+  border: 2px dashed #d1d5db; 
+  border-radius: 8px;
+  padding: 20px; 
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  box-sizing: border-box; 
+  background-color: #f9fafb; 
+}
+
+.file-wrap:hover {
+  border-color: #0069d9; 
+  background-color: rgba(0, 105, 217, 0.03); 
+}
+
+.file-wrap-error {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+
+.file-wrap input[type="file"] {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+  color: #0069d9; 
+}
+
+.file-upload-design p {
+  margin: 0;
+  font-size: 14px; 
+  color: #495057;
+  font-weight: 600;
+}
+
+.upload-instruction-text {
+  font-size: 11px !important; 
+  font-style: italic; 
+  color: #6b7280; 
+  margin-top: 4px; 
+  font-weight: 400;
+}
+
+/* --- Previews (Cropped Square & Normal) --- */
+.preview-circle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.square-preview {
+  width: 180px; /* ✅ Doctor ki size 120px se 180px badhai */
+  height: 180px; /* ✅ Height bhi same badhai taaki square rahe */
+  border-radius: 10px; 
+  border: 2px solid #0069d9; 
+  object-fit: cover; 
+  box-shadow: 0 0 10px rgba(0, 105, 217, 0.1); 
+  background-color: #f3f4f6; 
+}
+
+.preview-container {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #0069d9;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.uploaded-preview {
+  max-width: 100%;
+  max-height: 80px; /* ✅ Signature ki size 150px se 80px (chhoti) kar di */
+  object-fit: contain; 
+}
+
+.btn-remove {
+  margin-top: 8px;
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.btn-remove:hover {
+  background: #dc3545;
+  color: white;
+}
+
+/* --- Buttons & Actions --- */
+.action-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(145deg, #0069d9, #0056b3);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 105, 217, 0.3);
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 105, 217, 0.4);
+}
+
+.btn-submit:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Loader */
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loading-note {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* --- Modal (Cropping Popup) Styling --- */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); 
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background: #ffffff; 
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.close-modal {
+  position: absolute;
+  top: -10px; right: -10px;
+  background: #0069d9; 
+  color: white;
+  border: none;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+  line-height: 1;
+}
+
+.crop-instruction {
+  font-size: 13px; 
+  font-style: italic; 
+  color: #6b7280; 
+  text-align: center; 
+  margin-top: 5px; 
+  margin-bottom: 10px; 
+  font-weight: 500;
+}
+
+.image-crop-container {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.cropper-component {
+  height: 400px;
+  width: 100%;
+}
+
+
+/* =========================================
+   RESULT DISPLAY OVERLAY (SPLIT LAYOUT)
+   ========================================= */
+
+.result-display-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8); 
+  backdrop-filter: blur(5px);
+  z-index: 9998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.split-result-card {
+  background-color: white; /* Fallback color */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  padding: 0; 
+  border-radius: 0; /* ✅ Border radius nikal di (0 kar di) */
+  width: 100%;
+  max-width: 800px; /* Wider card for split layout */
+  display: flex;
+  flex-direction: row; /* Horizontal split by default */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  animation: slideUp 0.3s ease-out;
+  overflow: hidden;
+  max-height: 90vh;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Left Column: Images --- */
+.result-left-column {
+  flex: 0.8;
+  /* ✅ Background ko transparent kiya taaki piche ka bg.png dikhe */
+  background: transparent; 
+  padding: 25px;
+  /* ✅ Border ko bhi thoda light/transparent kiya */
+  border-right: 1px solid rgba(0, 0, 0, 0.1); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.result-img-box {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-title {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff; /* ✅ Color white kar diya */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.result-doctor-img {
+  width: 160px; /* ✅ Size badhai: 120px se 160px */
+  height: 160px; /* ✅ Size badhai: 120px se 160px */
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #0069d9;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.result-signature-img {
+  max-width: 100%;
+  max-height: 140px; /* ✅ Size badhai: 100px se 140px */
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 5px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* --- Right Column: Text & Actions --- */
+.result-right-column {
+  flex: 1.2;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.result-right-column h3 {
+  color: #0069d9;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.result-subtitle {
+  color: #ffffff; /* ✅ Color white kar diya */
+  font-size: 1.2rem; /* ✅ Thoda sa font bada kar diya taaki title jaisa lage (optional) */
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Analysis Text Box */
+.text-result-wrapper {
+ width: 100%;
+  /* ✅ Background ko halka transparent white (Glass effect) diya */
+  background-color: rgba(255, 255, 255, 0.85); 
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Border ekdum soft kiya */
+  padding: 20px;
+  margin-bottom: 25px;
+  text-align: left;
+  flex-grow: 1; /* Take up available space */
+  overflow-y: auto;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.analysis-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #212529;
+  white-space: pre-wrap; /* Preserve line breaks if AI sends any */
+}
+
+/* Actions */
+.result-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: auto; 
+}
+
+.btn-copy {
+  flex: 2;
+  background: #ffffff; /* ✅ Background white kiya */
+  color: #0069d9; /* ✅ Font color blue kiya */
+  border: 2px solid #0069d9; /* ✅ Border blue kiya */
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-copy:hover {
+  background: #f0f7ff; /* ✅ Hover pe halka blue tint diya */
+  color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-copied {
+  background: #28a745 !important; /* Turns green when copied */
+}
+
+.btn-close-result {
+  flex: 1;
+  background: white;
+  border: 2px solid #dc3545;
+  color: #dc3545;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-close-result:hover {
+  background: #dc3545;
+  color: white;
+}
+
+/* --- Responsive Design for Split Layout --- */
+@media (max-width: 768px) {
+  .split-result-card {
+      flex-direction: column; /* Stack on mobile */
+  }
+
+  .result-left-column {
+      flex: unset;
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
+      flex-direction: row; /* Put images side by side on mobile */
+      justify-content: space-around;
+      padding: 15px;
+      gap: 10px;
+  }
+
+  .result-doctor-img {
+      width: 100px; /* ✅ Mobile pe size badhai: 80px se 100px */
+      height: 100px; /* ✅ Mobile pe size badhai: 80px se 100px */
+  }
+
+  .result-signature-img {
+      max-height: 100px; /* ✅ Mobile pe height badhai: 80px se 100px */
+      max-width: 150px; /* ✅ Thodi width bhi badhai taaki proper propotion rahe */
+  }
+
+  .result-right-column {
+      padding: 20px;
+  }
+
+  .text-result-wrapper {
+      max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-actions {
+      display: flex;
+      flex-wrap: wrap; 
+      gap: 10px;
+  }
+  
+  /* ✅ Dono buttons ko strictly EXACT equal width dene ke liye */
+  .btn-download-report, .btn-copy {
+      font-size: 12px;
+      padding: 10px 5px;
+      flex: 1 1 calc(50% - 5px); /* 50% width minus thoda gap */
+      max-width: calc(50% - 5px); /* Force same width */
+      white-space: nowrap; /* ✅ Text ko do line me tootne se rokega */
+  }
+
+  /* ✅ Close button 100% width pe nichi line me */
+  .btn-close-result {
+      font-size: 12px;
+      padding: 10px 5px;
+      flex: 1 1 100%; 
+  }
+}
+/* --- Naya Download Report Button --- */
+.btn-download-report {
+  flex: 2;
+  background: #28a745; /* Green color taaki alag dikhe */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-download-report:hover:not(:disabled) {
+  background: #218838;
+}
+
+.btn-download-report:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Small Loader for Buttons */
+.loader-small {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}

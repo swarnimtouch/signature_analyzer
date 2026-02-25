@@ -1,0 +1,166 @@
+/* --- GLOBAL RESET FOR LOGIN PAGE --- */
+body {
+    background-color: #f4f6f9; /* Professional Soft Blue-Grey */
+    font-family: 'Poppins', sans-serif;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* --- CONTAINER --- */
+.login-container {
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* --- LOGIN CARD --- */
+.login-container .login-card {
+    background: #ffffff;
+    border: 2px solid #0069d9 !important; /* Professional Blue */
+    border-radius: 16px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 105, 217, 0.15); /* Blue Shadow */
+}
+
+/* --- TYPOGRAPHY (Force Gradient) --- */
+.login-container .login-gradient-text {
+    background: linear-gradient(145deg, #0069d9, #004494) !important; /* Blue Gradient */
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+/* --- INPUT WRAPPER & ICON --- */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.login-container .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 1rem;
+    pointer-events: none;
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+/* Focus State Icon Color */
+.login-container .input-wrapper:focus-within .input-icon {
+    color: #0069d9 !important; /* Blue Icon on Focus */
+}
+
+/* --- INPUT BASE --- */
+.login-container .form-control {
+    background-color: #f9fafb !important;
+    color: #1f2937 !important;
+}
+
+/* --- CUSTOM INPUT (NON-FOCUS STATE) --- */
+.login-container .custom-input {
+    background-color: #f9fafb !important;
+    border: 1px solid #d1d5db !important;
+    color: #1f2937 !important;
+    border-radius: 8px !important;
+    padding: 14px 15px 14px 45px !important;
+    font-size: 1rem;
+    height: 50px;
+    transition: all 0.3s ease;
+    box-shadow: none !important; 
+}
+
+/* --- FOCUS STATE --- */
+.login-container .custom-input:focus,
+.login-container .form-control:focus {
+    background-color: #ffffff !important;
+    border-color: #0069d9 !important; /* Force Blue Border */
+    border-radius: 8px !important;
+    box-shadow: 0 0 0 4px rgba(0, 105, 217, 0.15) !important; /* Force Blue Ring */
+    color: #000000 !important;
+    outline: none !important;
+}
+
+/* --- ERROR STATE --- */
+.login-container .is-invalid-custom,
+.login-container .is-invalid-custom:focus {
+    border-color: #dc2626 !important;
+    background-color: #fef2f2 !important;
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1) !important;
+}
+
+/* Input icon turns red on error */
+.login-container .input-wrapper .text-danger {
+    color: #dc2626 !important;
+}
+
+/* Error Message Text */
+.login-container .validation-error {
+    color: #dc2626;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    margin-left: 4px;
+    font-weight: 500;
+    text-align: left;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- PLACEHOLDER --- */
+.login-container .custom-input::placeholder {
+    color: #9ca3af !important;
+    font-size: 0.95rem;
+}
+
+/* --- AUTOFILL FIX --- */
+.login-container input:-webkit-autofill,
+.login-container input:-webkit-autofill:hover,
+.login-container input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #1f2937 !important;
+    -webkit-box-shadow: 0 0 0 1000px #f9fafb inset !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.login-container input:-webkit-autofill:focus {
+    border-color: #0069d9 !important;
+    box-shadow: 0 0 0 1000px #ffffff inset, 0 0 0 4px rgba(0, 105, 217, 0.15) !important;
+}
+
+/* --- LOGIN BUTTON --- */
+.login-container .gradient-btn {
+    background: linear-gradient(145deg, #0069d9, #0056b3) !important; /* Blue Gradient */
+    border: none;
+    color: #ffffff !important;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 105, 217, 0.3) !important;
+}
+
+.login-container .gradient-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 105, 217, 0.5) !important;
+    opacity: 0.95;
+}
+
+/* --- ERROR ALERT --- */
+.login-container .alert-danger {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    border-radius: 8px;
+}
