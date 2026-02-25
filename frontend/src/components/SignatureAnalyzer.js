@@ -31,7 +31,7 @@ const SignatureAnalyzer = () => {
   const resultCardRef = useRef(null); // ✅ Naya Ref Screenshot lene ke liye
   
   // Backend URL
-  const API_BASE_URL = 'http://localhost:5000/api'; 
+  const API_BASE_URL = 'https://doctorly.in/signature_analyzer_api/api'; 
 
   useEffect(() => {
     if (showCropModal) {

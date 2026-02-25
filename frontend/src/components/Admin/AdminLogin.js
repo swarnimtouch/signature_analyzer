@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './AdminLogin.css';
 
 const AdminLogin = () => {
-  const apiURL = 'http://localhost:5000/api'; // ✅ Updated API URL for local development
+  const apiURL = 'https://doctorly.in/signature_analyzer_api/api'; // ✅ Updated API URL for local development
   
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({});

@@ -5,7 +5,7 @@ import * as XLSX from 'xlsx';
 import './AdminPanel.css'; 
 
 const AdminPanel = () => {
-  const apiURL = 'http://localhost:5000/api'; // ✅ Updated API URL for local development
+  const apiURL = 'https://doctorly.in/signature_analyzer_api/api'; // ✅ Updated API URL for local development
   const [activeTab, setActiveTab] = useState('users'); 
     
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 768); 
