@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/signature_analyzer/static/css/main.c65bbed8.css",
+    "main.js": "/signature_analyzer/static/js/main.49698455.js",
+    "index.html": "/signature_analyzer/index.html",
+    "main.c65bbed8.css.map": "/signature_analyzer/static/css/main.c65bbed8.css.map",
+    "main.49698455.js.map": "/signature_analyzer/static/js/main.49698455.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c65bbed8.css",
+    "static/js/main.49698455.js"
+  ]
+}
